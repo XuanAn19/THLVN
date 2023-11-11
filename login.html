@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" type="text/css" href="login.css"> >
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Tên đăng nhập" name="username" required>
+            <input type="password" placeholder="Mật khẩu" name="password" required>
+            <div>
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Lưu đăng nhập</label>
+            </div>
+            <button type="submit">Đăng nhập</button>
+        </form>
+        <p>Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        
+        const savedUsername = localStorage.getItem('username');
+        if (savedUsername) {
+            loginForm.username.value = savedUsername;
+        }
+
+        
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = loginForm.username.value;
+            const password = loginForm.password.value;
+
+        
+            if (username === 'yourUsername' && password === 'yourPassword') {
+                localStorage.setItem('username', username);
+                alert('Đăng nhập thành công');
+            } else {
+                alert('Đăng nhập không thành công. Vui lòng thử lại.');
+            }
+        });
+    </script>
+</body>
+</html>

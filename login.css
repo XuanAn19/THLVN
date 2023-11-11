@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../anh/333.jpg');
+    background-size: cover;
+    background-position: center; /* Đặt hình ảnh nền vào giữa trang */
+    background-repeat: no-repeat; /* Ngăn lặp hình ảnh nền */
+    margin: 0; /* Loại bỏ khoảng trắng xung quanh trang */
+    padding: 0; /* Loại bỏ các lề ngoài */
+    height: 100vh; /* Đặt chiều cao của body là 100% chiều cao của viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px; /* Thay đổi độ rộng */
+    height: 300px; /* Thay đổi chiều cao */
+    margin: 0 auto; /* Đặt giữa theo chiều ngang */
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(270, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Hiệu ứng hover mượt mà */
+}
+
+button:hover {
+    background-color: #b3003c;
+}
