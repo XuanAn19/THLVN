@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/giaodien.css">
+    <link rel="stylesheet" href="css/theloai.css">
 	<title>BOOKSTORE</title>
     <style>
 	
@@ -100,7 +101,12 @@
 	</style>
 </head>
 <body>
+    
         <?php include 'header.php';?>
+        <?php include 'menu.php';?>
+       
+        
+        
         <?php
                 
                 include './connect_db.php';
@@ -187,7 +193,9 @@
                     }
                     ?>
         </div>
-    </section>               
+        
+    </section>
+                   
           <?php include 'phantrang.php'?>          
 </body>
 </html>

@@ -73,13 +73,15 @@
                 </div>
              </nav>
         </header>
+        
         <div>
         <div>
-    <ul id="main-menu">
+            
+     <!--<ul id="main-menu">
         <li ><a href="TrangChu.php" class="active"> TRANG CHỦ</a></li>
         <li><a href=""> GIỚI THIỆU</a></li>
         <li><a href=""> THỂ LOẠI SÁCH</a>
-            <!--<ul class="sub-menu" style="text-indent: 0; margin-left: 0;">
+           <ul class="sub-menu" style="text-indent: 0; margin-left: 0;">
             <li><a href="Kinh Dị" class="tieude"><i class="fa fa-book"></i> Kinh Dị</a></li>
                    <ul class="sub-menu" style="text-indent: 0; margin-left: 0;">
                         <li><a href="Lãng Mạng" class="tieude"><i class="fa fa-heart"></i> Lãng Mạng</a></li>
@@ -91,7 +93,7 @@
                     </ul>
                     </ul>
                     <li><a href="Khoa Học" class="tieude"><i class="fa fa-flask"></i> Khoa Học</a></li>
-            </ul>-->
+            </ul>
         </li>
         <li><a href=""> HỖ TRỢ</a></li>
 		<li><div class="search-container">
@@ -101,6 +103,6 @@
 		  </form>
 		</div></li>
        
-    </ul>
+    </ul>-->
 </div>
 </div>
