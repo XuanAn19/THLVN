@@ -71,21 +71,18 @@
                     <tr>
      
                         <td colspan="2" align="center"style="margin: 20px;">
-                        <input type="submit" name="guihotro" value="Gửi hỗ trợ" class="button" 
-                        style="font-size: 20px; background: orange; color: white; border-radius: 20px;" /></td>
-     
-                    </tr>
-     
-                </table>
-     
-            </form>
-     
-            </div>
-    
-                
-    
-    </div>
-    <title> Gửi Hỗ Trợ</title>
+                        <title>Gửi Hỗ Trợ</title>
+                        </head>
+<body>
+    <button  style="font-size: 20px; background: orange; color: white; border-radius: 20px;" id="supportButton">Gửi Hỗ Trợ</button>
+
+    <script>
+        document.getElementById("supportButton").addEventListener("click", function() {
+            alert("Yêu cầu hỗ trợ của bạn đã được gửi đi!"); // Hiển thị thông báo
+            // Có thể thêm mã JavaScript để xử lý thêm logic hoặc gửi yêu cầu đến máy chủ ở đây
+        });
+    </script>
+
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
