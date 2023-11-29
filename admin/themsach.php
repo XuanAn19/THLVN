@@ -7,6 +7,9 @@
     <title>Thêm Sách</title>
 </head>
 <body>
+    <?php
+    include '../connect_db.php';
+    ?>
     <a href="http://localhost/bansach/THLVN/admin/quanlysach.php" class="back-to-menu">quay lại menu quản lí</a>
         <form action="<?php echo ($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
         <div class ="form-container">
@@ -22,8 +25,27 @@
                 <div class="form-right">
                     
                         <ul>
-                            <li> Thể Loại <input type="text" name ="theloai" required oninvalid="this.setCustomValidity('Vui lòng nhập Thể Loại Sách')"></li>
-                            <li>Giới thiệu sách<textarea name="chitiet" id="" cols="30" rows="10" required oninvalid="this.setCustomValidity('Vui lòng nhập Giới Thiệu Sách')"></textarea> </li>
+                            
+                        <label>Thể Loại</label>
+                            <li> 
+                                <select name="theloai"  >
+                                    <?php
+                                        include './connect_db.php';
+                                        $query = "SELECT * FROM theloai";
+                                        $theloai = mysqli_query($kn, $query);
+                                        while ($row = mysqli_fetch_assoc($theloai)) {
+                                        $categoryId = $row['id_theloai'];
+                                        $categoryName = $row['ten'];
+                                        echo "<option value='$categoryId'>$categoryName</option>";
+                                        }
+
+                                        // Đóng kết nối cơ sở dữ liệu
+                                        mysqli_close($kn);
+                                    ?>
+                                </select>
+                                
+                            </li> 
+                             <li>Giới thiệu sách<textarea name="chitiet" id="" cols="30" rows="10" required oninvalid="this.setCustomValidity('Vui lòng nhập Giới Thiệu Sách')"></textarea> </li>
                             <li>Chọn Ảnh <input type="file" name="hinh_sp" id="hinh_sp" required oninvalid="this.setCustomValidity('Vui lòng Chọn hình ảnh sách')"></li>
                             <li><input type="submit" value="Thêm "name ="them"></li>
                         </ul>
@@ -33,26 +55,24 @@
         <?php
         include '../connect_db.php'; 
             if (isset($_POST['them'])){
-
                 $ten_sp=$_POST['ten_sp'];
                 $soluong=$_POST['soluong'];
                 $tentacgia=$_POST['tentacgia'];
                 $gia=$_POST['gia'];
-                $chitiet=$_POST['chitiet'];
+                $chitiet=$_POST['chitiet'];                
                 $theloai=$_POST['theloai'];
                     $image = $_FILES["hinh_sp"];
+             
                     $image_name = $image["name"];
                     // Kiểm tra và di chuyển tệp tin vào thư mục lưu trữ (hoặc thực hiện các xử lý khác tùy ý)
                     $upload_dir = "./images/";
                     $image_path = $upload_dir . basename($image_name);
                        // Lưu đường dẫn vào cơ sở dữ liệu
-                       $sql_them = "INSERT INTO `sanpham` (`id_sp`, `ten_sp`, `soluong`, `hinh_sp`, `tentacgia`, `gia`, `chitiet`, `theloai`)
-                       VALUES (NULL, '".$ten_sp."', '".$soluong."', '".$image_path."', '".$tentacgia."', '".$gia."', '".$chitiet."', '".$theloai."')";
-                       
+                       $sql_them = "INSERT INTO `sanpham` (`ten_sp`, `soluong`, `hinh_sp`, `tentacgia`, `gia`, `chitiet`, `theloai`)
+              VALUES ('".$ten_sp."', '".$soluong."', '".$image_path."', '".$tentacgia."', '".$gia."', '".$chitiet."', '".$theloai."')";
+                    $result = mysqli_query($kn, $sql_them);
           var_dump($sql_them);
-          
-          $result = mysqli_query($kn, $sql_them);
-          
+   
           var_dump($result);
           
             }   
