@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 23, 2023 at 10:53 AM
+-- Generation Time: Nov 28, 2023 at 09:43 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -56,14 +56,16 @@ CREATE TABLE IF NOT EXISTS `chitiet_giohang` (
   PRIMARY KEY (`id`),
   KEY `id_giohang` (`id_giohang`,`id_sanpham`),
   KEY `id_sanpham` (`id_sanpham`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `chitiet_giohang`
 --
 
 INSERT INTO `chitiet_giohang` (`id`, `id_giohang`, `id_sanpham`, `soluong`, `gia`) VALUES
-(6, 1, 3, 1, 50000);
+(6, 1, 3, 1, 50000),
+(7, 2, 3, 1, 50000),
+(8, 2, 4, 2, 80000);
 
 -- --------------------------------------------------------
 
@@ -80,14 +82,15 @@ CREATE TABLE IF NOT EXISTS `giohang` (
   `ghichu` text NOT NULL,
   `tongtien` text NOT NULL,
   PRIMARY KEY (`id_gh`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `giohang`
 --
 
 INSERT INTO `giohang` (`id_gh`, `tennguoidat`, `sodienthoai`, `diachi`, `ghichu`, `tongtien`) VALUES
-(1, 'Nguyễn Xuân An', '0379644470', '02/Bùi Điền', '', '50000');
+(1, 'Nguyễn Xuân An', '0379644470', '02/Bùi Điền', '', '50000'),
+(2, 'Nguyễn Xuân An', '0379644470', '02/Bùi Điền', '', '130000');
 
 -- --------------------------------------------------------
 
@@ -97,14 +100,19 @@ INSERT INTO `giohang` (`id_gh`, `tennguoidat`, `sodienthoai`, `diachi`, `ghichu`
 
 DROP TABLE IF EXISTS `giohangtemp`;
 CREATE TABLE IF NOT EXISTS `giohangtemp` (
-  `id` int NOT NULL,
   `name` text NOT NULL,
   `id_sanpham` int NOT NULL,
   `soluong` int NOT NULL,
   `gia` int NOT NULL,
-  PRIMARY KEY (`id`),
   KEY `giohangtemp_ibfk_1` (`id_sanpham`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `giohangtemp`
+--
+
+INSERT INTO `giohangtemp` (`name`, `id_sanpham`, `soluong`, `gia`) VALUES
+('test', 3, 3, 50000);
 
 -- --------------------------------------------------------
 
@@ -148,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
 INSERT INTO `sanpham` (`id_sp`, `ten_sp`, `soluong`, `hinh_sp`, `tentacgia`, `gia`, `chitiet`, `theloai`) VALUES
 (1, 'Sách giáo khoa', 0, NULL, 'Nguyễn Khoa Điềm', '20000', 'Sách cho cấp 3', 1),
 (2, 'Sach', 0, 'images/333.jpg', '113', '111', 'adfn', 1),
-(3, 'Sách lịch sử', 2, NULL, 'Nguyễn Văn A', '50000', 'Sách về lịch sử Việt Nam', 1),
-(4, 'Tiểu thuyết', 3, 'images/444.jpg', 'Kim Thanh', '80000', 'Tiểu thuyết tình yêu', 2),
+(3, 'Sách lịch sử', 1, NULL, 'Nguyễn Văn A', '50000', 'Sách về lịch sử Việt Nam', 1),
+(4, 'Tiểu thuyết', 2, 'images/444.jpg', 'Kim Thanh', '80000', 'Tiểu thuyết tình yêu', 2),
 (5, 'Sách kỹ năng sống', 10, NULL, 'Nguyễn Văn B', '35000', 'Sách hướng dẫn kỹ năng sống', 1),
 (6, 'Truyện tranh', 8, 'images/555.jpg', 'Trần Thanh', '60000', 'Truyện tranh hài hước', 3),
 (7, 'Sách kinh tế', 4, NULL, 'Lê Thị C', '45000', 'Sách về kinh tế học', 2),
@@ -172,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `taikhoan` (
   `matkhau` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `email` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `taikhoan`
@@ -181,7 +189,11 @@ CREATE TABLE IF NOT EXISTS `taikhoan` (
 INSERT INTO `taikhoan` (`id`, `tendangnhap`, `matkhau`, `email`) VALUES
 (1, 'test', '1', 'nguyenvana@gmail.com'),
 (2, 'test1', '1', '123@gmail.com'),
-(3, 'admin2', '1', '123@gmail.com');
+(3, 'admin2', '1', '123@gmail.com'),
+(4, 't', '1', '123@gmail.com'),
+(5, 't1', '1', '123@gmail.com'),
+(6, 't11', '1', '123'),
+(7, 'q', 'q', '123@gmail.com');
 
 -- --------------------------------------------------------
 
