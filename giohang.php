@@ -275,7 +275,7 @@ var_dump($insertOrder);
 			  <input type="text" name="address" class="form-control" placeholder="Nhập địa chỉ nhận hàng">
 			</div>
 			<div class="input-group">
-			  <span class="input-group-text">Ghi chú a:</span>
+			  <span class="input-group-text">Ghi chú :</span>
 			  <textarea class="form-control" name="note" aria-label="With textarea" placeholder="Nhập ghi chú đơn hàng..."></textarea>
 			</div>
 			<input type="submit" name="order_click" class="btn btn-outline-success" value ="Đặt hàng">

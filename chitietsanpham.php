@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php 
+
 	session_start();
 	require_once "./connect_db.php";
 	include "header.php"
@@ -17,9 +18,11 @@ and open the template in the editor.
     <head>
         <title>BOOKSTORE</title>
         <meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/style_detail.css">
 		<link rel="stylesheet" href="css/giaodien.css">
+		<link rel="stylesheet" href="css/theloai.css">
     </head>
     <body>
         <?php
@@ -66,6 +69,7 @@ and open the template in the editor.
                 <div class="clear-both"></div>
                 <?=$product['chitiet']?>
             </div>
+			
         </div>
 		<?php } ?>
     </body>
