@@ -31,9 +31,9 @@ and open the template in the editor.
         <div class="container">
             <h2>Chi tiết sản phẩm</h2>
             <div id="product-detail">
-                <!--<div id="product-img">
-                    <img src="admin1/<?=$product['hinh_sp']?>" />
-                </div>-->
+                <div id="product-img">
+                    <img src=".<?=$product['hinh_sp']?>" />
+                </div>
                 <div id="product-info">
                     <h1><?=$product['ten_sp']?></h1>
                     <label>Tên tác giả: </label><span class="product-price"><?=$product['tentacgia']?></span><br/>
@@ -54,7 +54,7 @@ and open the template in the editor.
 		<div class="container">
             <h2>Chi tiết sản phẩm</h2>
             <div id="product-detail">
-                <div id="product-img">
+                <div id="product-img" >
                     <img src="<?=$product['hinh_sp']?>" />
                 </div>
                 <div id="product-info">

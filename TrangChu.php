@@ -150,21 +150,18 @@
                         <ul>
                             <div class="product">
                                 <div class="product__avatar">
-                                    <a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>"><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--front"/></a>
-                                    <a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>"><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--back"/></a>
+                                    <a href=""><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--front"/></a>
+                                    <a href=""><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--back"/></a>
                                 </div>
-                                <div class="product__name"><a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>"><?= $row['ten_sp']?></div>    
+                                <div class="product__name"><?= $row['ten_sp']?></div>    
                                 <div class="product__price">
-                                    <span><a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>">Giá: <?= number_format($row['gia'], 0, ",", ".") ?></a><span>đ</span></span>
+                                    <span>Giá: <?= number_format($row['gia'], 0, ",", ".") ?><span>đ</span></span>
                                 </div>
-                                    <p><a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>"><?= $row['chitiet'] ?></p>
+                                    <p><?= $row['chitiet'] ?></p>
                                     <br>
-                                        <div class="buy-button">
-                                            <form id="add-to-cart-form" action="giohang.php?action=add" method="POST" >
-                                                <input type="text" value="1" name="quantity[<?= $row['id_sp']?>]">
-                                                <input type="submit" value="Mua sản phẩm" />
-                                            </form>
-                                        </div>
+                                        
+                                     <a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>">Xem chi tiết</a>
+                                     <br>   
                             </div>  
                         </ul>
                 <?php } else {
@@ -172,16 +169,17 @@
                         <ul>
                             <div class="product">
                                 <div class="product__avatar">
-                                    <a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>"><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--front"/></a>
-                                    <a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>"><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--back"/></a>
+                                    <a href=""><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--front"/></a>
+                                    <a href=""><img src="<?=$row['hinh_sp'] ?>" title="<?= $row['ten_sp']?>" class="product__avatar--back"/></a>
                                 </div>
-                                <div class="product__name"><a href="http://localhost/bansach/THLVN/chitietsanpham.php?id=<?=$row['id_sp'] ?>"><?= $row['ten_sp']?></div>    
+                                <div class="product__name"><?= $row['ten_sp']?></div>    
                                 <div class="product__price">
-                                    <span><a href="http://localhost/bansach/THLVN/chitietsanpham.php?id=<?=$row['id_sp'] ?>">Giá: <?= number_format($row['gia'], 0, ",", ".") ?></a><span>đ</span></span>
+                                    <span>Giá: <?= number_format($row['gia'], 0, ",", ".") ?><span>đ</span></span>
                                 </div>
                                     <p><?= $row['chitiet'] ?></p>
                                     <br>
-                                        <h4>Hết Hàng</h4>
+                                        <a href="chitietsanpham.php?id=<?=$row['id_sp'] ?>">Xem chi tiết</a>
+									
                             </div>  
                         </ul>
                     <?php } 

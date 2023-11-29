@@ -196,7 +196,7 @@ var_dump($insertOrder);
                 <div class="main-menu-right">
                     <ul id="main-menu-right2">
 					
-                    <li><a href="http://localhost/bansach/THLVN/login.php"><button type="button" class="btn btn-outline-warning">Đổi mật khẩu</button></a></li>
+                    <li><a href="http://localhost/bansach/THLVN/doimatkhau.php"><button type="button" class="btn btn-outline-warning">Đổi mật khẩu</button></a></li>
 					<li><a href="http://localhost/bansach/THLVN/dangxuat.php"><button type="button" class="btn btn-outline-danger">Đăng Xuất</button></a></li>
                 </ul>
                 </div>
