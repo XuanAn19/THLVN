@@ -23,6 +23,11 @@ and open the template in the editor.
 		<link rel="stylesheet" href="css/style_detail.css">
 		<link rel="stylesheet" href="css/giaodien.css">
 		<link rel="stylesheet" href="css/theloai.css">
+        <link rel="stylesheet" href="css/TL.css">
+
+       
+
+
     </head>
     <body>
         <?php
@@ -42,10 +47,42 @@ and open the template in the editor.
                     <label>Tên tác giả: </label><span class="product-price"><?=$product['tentacgia']?></span><br/>
 					<label>Giá: </label><span class="product-price"><?= number_format($product['gia'], 0, ",", ".") ?> VND</span><br/>
 					<label>Thể loại: </label><span class="product-price"><?=$product['theloai']?></span><br/>
-                    <form id="add-to-cart-form" action="giohang.php?action=add" method="POST" >
-						<input type="text" value="1" name="quantity[<?= $product['id_sp']?>]" size="2" /><br>
-						<input type="submit" value="Mua sản phẩm" />
-					</form>
+                    <form id="add-to-cart-form" action="giohang.php?action=add" method="POST">
+    <div class="quantity-container">
+        <!-- Nút giảm số lượng -->
+        <button type="button" class="quantity-button" onclick="decreaseQuantity()">-</button>
+
+        <!-- Ô nhập số lượng -->
+        <input type="number" value="1" name="quantity[<?= $product['id_sp'] ?>]" min="1" class="quantity-input" />
+
+        <!-- Nút tăng số lượng -->
+        <button type="button" class="quantity-button" onclick="increaseQuantity()">+</button>
+    </div>
+
+    <!-- Nút "Thêm vào giỏ hàng" -->
+    <button type="submit" name="add-to-cart">Mua Ngay</button>
+
+    <!-- Nút "Mua ngay" -->
+    <button type="button" onclick="buyNow()">Thêm vào giỏ h</button>
+</form>
+
+<script>
+    function increaseQuantity() {
+        var quantityInput = document.querySelector('input[name="quantity[<?= $product['id_sp'] ?>]"]');
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    }
+
+    function decreaseQuantity() {
+        var quantityInput = document.querySelector('input[name="quantity[<?= $product['id_sp'] ?>]"]');
+        var newValue = parseInt(quantityInput.value) - 1;
+        quantityInput.value = newValue < 1 ? 1 : newValue;
+    }
+
+    function buyNow() {
+        
+        alert('Sản phẩm đã được thêm vào giỏ hàng!');
+    }
+</script>
                     <?php if(!empty($product['hinh_sp'])){ ?>
                     <?php } ?>
                 </div>
@@ -70,7 +107,14 @@ and open the template in the editor.
                 <?=$product['chitiet']?>
             </div>
 			
-        </div>
-		<?php } ?>
-    </body>
+            </div>
+<?php } ?>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Include theloai.js after jQuery -->
+<script src="path/to/theloai.js"></script>
+
+</body>
 </html>

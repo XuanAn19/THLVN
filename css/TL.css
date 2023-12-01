@@ -1,0 +1,43 @@
+
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-button {
+    width: 20px; 
+    height: 20px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 30px;
+    text-align: center;
+}
+
+.availability-info {
+    margin-left: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.cart-button, .buy-now-button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button {
+    background-color: #000;
+    color: #fff;
+}
+
+.cart-button:hover, .buy-now-button:hover {
+    background-color: #333;
+}
